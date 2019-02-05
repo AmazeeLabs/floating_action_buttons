@@ -1,2 +1,2 @@
 # floating-action-buttons
-Add floating action buttons with options to save, delete, view, and open/close settings.
+Adds floating action buttons with options to save, delete, view, and open/close settings.
