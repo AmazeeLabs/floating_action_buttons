@@ -1,0 +1,9 @@
+floating_action_buttons.admin:
+  version: VERSION
+  js:
+    js/floating_action_buttons.admin.js: {}
+  css:
+    theme:
+      css/floating_action_buttons.admin.css: {}
+  dependencies:
+      - core/jquery

@@ -1,0 +1,5 @@
+name: Floating Action Buttons
+type: module
+description: 'Adds floating buttons with options to save, delete, view, and open/close settings'
+package: Custom
+core: 8.x

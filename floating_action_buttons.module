@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function floating_action_buttons_page_attachments(array &$attachments) {
+   $systemTheme = \Drupal::config('system.theme');
+   $admin = $systemTheme->get('admin');
+   $default = $systemTheme->get('default');
+   $theme = \Drupal::theme()->getActiveTheme()->getName();
+   if ($theme == $admin || $theme == $default) {
+      $attachments['#attached']['library'][] = 'floating_action_buttons/floating_action_buttons.admin';
+   }
+}
