@@ -1,4 +1,4 @@
-(function($) {
+(function($, Drupal) {
   // Drupal core specific class names
   var formActionsClass = '.layout-region-node-footer__content .form-actions';
   var settingsClass = '.layout-region-node-secondary';
@@ -157,4 +157,4 @@
         .before($settingsMenuButton);
     },
   };
-})(jQuery);
+})(jQuery, Drupal);

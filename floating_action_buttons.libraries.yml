@@ -6,4 +6,6 @@ floating_action_buttons.admin:
     theme:
       css/floating_action_buttons.admin.css: {}
   dependencies:
-      - core/jquery
+    - core/jquery
+    - core/drupal
+
