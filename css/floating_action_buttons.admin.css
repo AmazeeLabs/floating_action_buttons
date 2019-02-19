@@ -41,10 +41,10 @@
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 20px 30px;
   z-index: 99;
   -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  -webkit-transform: translateZ(0) scale(1, 1);
   transform: translateZ(0);
 }
 
@@ -52,7 +52,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 26px 26px 0 26px;  /* ((57px - 45px) / 2) + 20px */
+  padding: 50px 36px 0 36px; /* ((57px (width) - 45px (width) / 2) + 30px (padding) */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-flow: column nowrap;
@@ -68,10 +68,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: bottom 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: bottom 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-property: bottom, opacity;
-  transition-property: bottom, opacity;
+  -webkit-transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-property: bottom, opacity, visibility;
+  transition-property: bottom, opacity, visibility;
   z-index: 0;
 }
 
@@ -91,23 +91,20 @@
   padding: 0;
   white-space: nowrap;
   min-width: 45px;
-  text-indent: -9999px;
-  overflow: hidden;
-  -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-property: padding, opacity;
-  transition-property: padding, opacity;
+  -webkit-transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   -ms-flex-item-align: end;
   align-self: flex-end;
   border: none;
   text-decoration: none;
   text-transform: uppercase;
-  -webkit-transform: scale(0.4);
-  transform: scale(0.4);
   background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 15px;
+  background-position: right calc((45px - 21px) / 2) center;
+  background-size: 21px;
   color: transparent;
+  overflow: hidden;
   font-size: 12px;
   font-weight: 600;
 }
@@ -125,12 +122,16 @@
 .buttons-wrapper .form-wrapper input[type='submit']:focus {
   width: 100%;
   min-width: calc(116px - 50px - 15px);
-  background-position: right 16px center;
   color: #000;
   -webkit-box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.28);
   box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.28);
   padding: 0 50px 0 15px;
-  text-indent: 0;
+  -webkit-transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
+  transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
 }
 
 .buttons-wrapper .buttons-button.settings-menu {
@@ -138,20 +139,17 @@
   width: 57px;
   height: 57px;
   background-image: url(../images/icons/more.svg);
-  background-size: 5px 20px;
+  background-size: 50%;
   background-position: center;
   -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.35);
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.35);
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-  -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-  -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
   position: relative;
 }
@@ -172,17 +170,14 @@
 
 .buttons-wrapper .buttons-button#edit-preview {
   background-image: url(../images/icons/preview.svg);
-  background-size: 18px 11px;
 }
 
 .buttons-wrapper .buttons-button#edit-delete {
-  background-image: url(../images/icons/delete.svg);
-  background-size: 15px 16px;
+  background-image: url(../images/icons/delete-red.svg);
 }
 
 .buttons-wrapper .buttons-button#edit-delete:hover,
 .buttons-wrapper .buttons-button#edit-delete:focus {
-  background-image: url(../images/icons/delete-red.svg);
   color: #d72222;
 }
 
@@ -190,27 +185,27 @@
 .buttons-wrapper .buttons-button.settings-menu:hover,
 .buttons-wrapper .buttons-button.settings-menu:focus,
 .buttons-wrapper > li:hover .buttons-button.settings-menu {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
   background-image: url(../images/icons/close.svg);
-  background-size: 17px;
+  background-size: 50%;
   text-indent: -9999px;
   padding: 0;
 }
 
 /* Written twice to prevent breaking in Edge and IE */
 .buttons-wrapper > li:focus-within .buttons-button.settings-menu {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
   background-image: url(../images/icons/close.svg);
-  background-size: 17px;
+  background-size: 50%;
   text-indent: -9999px;
   padding: 0;
 }
 
 .buttons-wrapper .form-actions.active,
 .buttons-wrapper > li:hover .form-actions {
-  bottom: 77px; /* 57px + 20px */
+  bottom: 77px; /* 57px (width) + 20px (padding) */
   opacity: 1;
   visibility: visible;
   display: -webkit-box;
@@ -220,24 +215,12 @@
 
 /* Written twice to prevent breaking in Edge and IE */
 .buttons-wrapper > li:focus-within .form-actions {
-  bottom: 77px; /* 57px + 20px */
+  bottom: 77px; /* 57px (width) + 20px (padding) */
   opacity: 1;
   visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.buttons-wrapper .form-actions.active .buttons-button,
-.buttons-wrapper > li:hover .form-actions .buttons-button {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-/* Written twice to prevent breaking in Edge and IE */
-.buttons-wrapper > li:focus-within .form-actions .buttons-button {
-  -webkit-transform: scale(1);
-  transform: scale(1);
 }
 
 /* Settings styles */
@@ -255,8 +238,8 @@
   -webkit-box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
   box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
   z-index: -2;
-  -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-property: opacity, height;
   transition-property: opacity, height;
   display: -webkit-box;
@@ -270,23 +253,23 @@
   flex-direction: column-reverse;
 }
 
-@media only screen and (max-width: 768px) {
-  body.active {
-    overflow: hidden;
-  }
-
-  .layout-region-node-secondary.active {
-    min-width: 100%;
-    max-width: 100%;
-    height: 100%;
-  }
-}
-
 .layout-region-node-secondary.active {
   opacity: 1;
   visibility: visible;
   z-index: 999;
   height: 90vh;
+}
+
+@media only screen and (max-width: 1020px) {
+  body.active {
+    overflow: hidden;
+  }
+
+  .toolbar-vertical.toolbar-tray-open .layout-region-node-secondary.active {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
 }
 
 .layout-region-node-secondary .entity-meta {
@@ -297,6 +280,10 @@
   border-radius: 0;
   border-right: none;
   border-left: none;
+}
+
+.layout-region-node-secondary .entity-meta .seven-details:last-child {
+  border-radius: 0;
 }
 
 .layout-region-node-secondary .entity-meta__header,
@@ -319,18 +306,18 @@
   background-color: #f8f8f9;
 }
 
-.layout-region-node-secondary input.form-autocomplete,
-.layout-region-node-secondary input.form-text,
-.layout-region-node-secondary input.form-tel,
-.layout-region-node-secondary input.form-email,
-.layout-region-node-secondary input.form-url,
-.layout-region-node-secondary input.form-search,
-.layout-region-node-secondary input.form-number,
-.layout-region-node-secondary input.form-color,
-.layout-region-node-secondary input.form-file,
-.layout-region-node-secondary input.form-date,
-.layout-region-node-secondary input.form-time,
-.layout-region-node-secondary textarea.form-textarea {
+.layout-region-node-secondary .form-autocomplete,
+.layout-region-node-secondary .form-text,
+.layout-region-node-secondary .form-tel,
+.layout-region-node-secondary .form-email,
+.layout-region-node-secondary .form-url,
+.layout-region-node-secondary .form-search,
+.layout-region-node-secondary .form-number,
+.layout-region-node-secondary .form-color,
+.layout-region-node-secondary .form-file,
+.layout-region-node-secondary .form-date,
+.layout-region-node-secondary .form-time,
+.layout-region-node-secondary .form-textarea {
   background-color: #fff;
   border-color: #b8b8b8;
   border-radius: 0;
@@ -340,50 +327,63 @@
   width: 100%;
 }
 
-.layout-region-node-secondary textarea.form-textarea {
+.layout-region-node-secondary .form-textarea {
   height: auto;
 }
 
-.layout-region-node-secondary input.form-autocomplete:focus,
-.layout-region-node-secondary input.form-autocomplete:hover,
-.layout-region-node-secondary input.form-autocomplete:active,
-.layout-region-node-secondary input.form-text:focus,
-.layout-region-node-secondary input.form-text:hover,
-.layout-region-node-secondary input.form-text:active,
-.layout-region-node-secondary input.form-tel:focus,
-.layout-region-node-secondary input.form-tel:hover,
-.layout-region-node-secondary input.form-tel:active,
-.layout-region-node-secondary input.form-email:focus,
-.layout-region-node-secondary input.form-email:hover,
-.layout-region-node-secondary input.form-email:active,
-.layout-region-node-secondary input.form-url:focus,
-.layout-region-node-secondary input.form-url:hover,
-.layout-region-node-secondary input.form-url:active,
-.layout-region-node-secondary input.form-search:focus,
-.layout-region-node-secondary input.form-search:hover,
-.layout-region-node-secondary input.form-search:active,
-.layout-region-node-secondary input.form-number:focus,
-.layout-region-node-secondary input.form-number:hover,
-.layout-region-node-secondary input.form-number:active,
-.layout-region-node-secondary input.form-color:focus,
-.layout-region-node-secondary input.form-color:hover,
-.layout-region-node-secondary input.form-color:active,
-.layout-region-node-secondary input.form-file:focus,
-.layout-region-node-secondary input.form-file:hover,
-.layout-region-node-secondary input.form-file:active,
-.layout-region-node-secondary input.form-date:focus,
-.layout-region-node-secondary input.form-date:hover,
-.layout-region-node-secondary input.form-date:active,
-.layout-region-node-secondary input.form-time:focus,
-.layout-region-node-secondary input.form-time:hover,
-.layout-region-node-secondary input.form-time:active,
-.layout-region-node-secondary textarea.form-textarea:focus,
-.layout-region-node-secondary textarea.form-textarea:hover,
-.layout-region-node-secondary textarea.form-textarea:active {
-  border-color: none;
+.layout-region-node-secondary .form-autocomplete:focus,
+.layout-region-node-secondary .form-autocomplete:hover,
+.layout-region-node-secondary .form-autocomplete:active,
+.layout-region-node-secondary .form-text:focus,
+.layout-region-node-secondary .form-text:hover,
+.layout-region-node-secondary .form-text:active,
+.layout-region-node-secondary .form-tel:focus,
+.layout-region-node-secondary .form-tel:hover,
+.layout-region-node-secondary .form-tel:active,
+.layout-region-node-secondary .form-email:focus,
+.layout-region-node-secondary .form-email:hover,
+.layout-region-node-secondary .form-email:active,
+.layout-region-node-secondary .form-url:focus,
+.layout-region-node-secondary .form-url:hover,
+.layout-region-node-secondary .form-url:active,
+.layout-region-node-secondary .form-search:focus,
+.layout-region-node-secondary .form-search:hover,
+.layout-region-node-secondary .form-search:active,
+.layout-region-node-secondary .form-number:focus,
+.layout-region-node-secondary .form-number:hover,
+.layout-region-node-secondary .form-number:active,
+.layout-region-node-secondary .form-color:focus,
+.layout-region-node-secondary .form-color:hover,
+.layout-region-node-secondary .form-color:active,
+.layout-region-node-secondary .form-file:focus,
+.layout-region-node-secondary .form-file:hover,
+.layout-region-node-secondary .form-file:active,
+.layout-region-node-secondary .form-date:focus,
+.layout-region-node-secondary .form-date:hover,
+.layout-region-node-secondary .form-date:active,
+.layout-region-node-secondary .form-time:focus,
+.layout-region-node-secondary .form-time:hover,
+.layout-region-node-secondary .form-time:active,
+.layout-region-node-secondary .form-textarea:focus,
+.layout-region-node-secondary .form-textarea:hover,
+.layout-region-node-secondary .form-textarea:active {
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.layout-region-node-secondary .form-text:focus,
+.layout-region-node-secondary .form-tel:focus,
+.layout-region-node-secondary .form-email:focus,
+.layout-region-node-secondary .form-url:focus,
+.layout-region-node-secondary .form-search:focus,
+.layout-region-node-secondary .form-number:focus,
+.layout-region-node-secondary .form-color:focus,
+.layout-region-node-secondary .form-file:focus,
+.layout-region-node-secondary .form-textarea:focus,
+.layout-region-node-secondary .form-date:focus,
+.layout-region-node-secondary .form-time:focus {
+  border-color: #0049da;
 }
 
 .layout-region-node-secondary .button {
@@ -405,7 +405,7 @@
 .layout-region-node-secondary .button:active,
 .layout-region-node-secondary .button:hover,
 .layout-region-node-secondary .button:focus {
-  background-color: #0049da;
+  background-color: #083a9e;
   background-image: none;
   color: #fff;
   -webkit-box-shadow: none;
@@ -435,21 +435,29 @@
   position: absolute;
 }
 
+.layout-region-node-secondary .form-type-checkbox label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .layout-region-node-secondary .form-type-checkbox label::before {
   content: '';
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border: 1px solid #222330;
+  width: 15px;
+  height: 15px;
   margin-right: 10px;
-  background-color: #fff;
   background-repeat: no-repeat;
-  background-size: 11px;
+  background-size: 100%;
   background-position: center;
+  background-image: url(../images/icons/checkbox.svg);
 }
 
 .layout-region-node-secondary .form-type-checkbox input:checked + label::before {
-  background-image: url(../images/icons/check.svg);
+  background-image: url(../images/icons/checkbox-checked.svg);
 }
 
 .layout-region-node-secondary .form-type-checkbox.form-disabled label::before {
@@ -469,7 +477,7 @@
 }
 
 .layout-region-node-secondary details > summary::-webkit-details-marker {
-  display:none;
+  display: none;
 }
 
 .layout-region-node-secondary .collapse-processed > summary::before,
@@ -499,7 +507,9 @@
 .layout-region-node-secondary .seven-details[open] > .seven-details__summary,
 .layout-region-node-secondary details > summary:hover,
 .layout-region-node-secondary details > summary:focus,
-.layout-region-node-secondary details[open] > summary {
+.layout-region-node-secondary details[open] > summary,
+.layout-region-node-secondary a,
+.layout-region-node-secondary .link {
   color: #004adc;
 }
 
@@ -538,7 +548,9 @@
   align-items: center;
 }
 
-.layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single {
+.layout-region-node-secondary
+  .chosen-container-active.chosen-with-drop
+  .chosen-single {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -593,8 +605,7 @@
   width: 100%;
 }
 
-.layout-region-node-secondary .field--widget-moderation-state-buttons > div
-  .button {
+.layout-region-node-secondary .field--widget-moderation-state-buttons > div .button {
   margin: 0 0 20px 0;
 }
 
@@ -623,13 +634,13 @@
   color: #fff;
   background-position: left;
   padding-left: 30px;
-  background-size: 18px;
+  background-size: 20px;
   background-image: url(../images/icons/settings.svg);
   background-repeat: no-repeat;
 }
 
 .settings-wrapper .settings-close {
-  background-size: 15px;
+  background-size: 25px;
   text-indent: -9999px;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
