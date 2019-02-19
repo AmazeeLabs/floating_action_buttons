@@ -257,6 +257,36 @@
   display: flex;
 }
 
+/* Remove transition from Edge */
+@supports (-ms-ime-align: auto) {
+  .buttons-wrapper .buttons-button,
+  .buttons-wrapper .buttons-button:hover,
+  .buttons-wrapper .buttons-button:focus,
+  .buttons-wrapper .form-actions input:hover,
+  .buttons-wrapper .form-actions input:focus,
+  .buttons-wrapper .form-wrapper input[type='submit']:hover,
+  .buttons-wrapper .form-wrapper input[type='submit']:focus {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
+/* Remove transition from IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .buttons-wrapper .buttons-button,
+  .buttons-wrapper .buttons-button:hover,
+  .buttons-wrapper .buttons-button:focus,
+  .buttons-wrapper .form-actions input:hover,
+  .buttons-wrapper .form-actions input:focus,
+  .buttons-wrapper .form-wrapper input[type='submit']:hover,
+  .buttons-wrapper .form-wrapper input[type='submit']:focus {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
 /* Settings styles */
 /* Styles for current elements */
 .layout-region-node-secondary {
@@ -559,6 +589,18 @@
 .layout-region-node-secondary a,
 .layout-region-node-secondary .link {
   color: #004adc;
+}
+
+.layout-region-node-secondary details .details-title {
+  color: #222330;
+}
+
+.layout-region-node-secondary details .details-title:hover,
+.layout-region-node-secondary details .details-title:focus,
+.layout-region-node-secondary details:hover .details-title,
+.layout-region-node-secondary details:focus .details-title {
+  color: #004adc;
+  text-decoration: none;
 }
 
 .layout-region-node-secondary select,
