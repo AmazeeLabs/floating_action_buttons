@@ -508,17 +508,6 @@
   position: absolute;
 }
 
-.layout-region-node-secondary .form-type-checkbox label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: -webkit-inline-flex;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
 .layout-region-node-secondary .form-type-checkbox label::before {
   content: '';
   display: inline-block;
@@ -530,6 +519,7 @@
   background-size: 100%;
   background-position: center;
   background-image: url(../images/icons/checkbox.svg);
+  vertical-align: middle;
 }
 
 .layout-region-node-secondary .form-type-checkbox input:checked + label::before {
