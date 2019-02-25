@@ -123,8 +123,11 @@
   padding: 0;
 }
 
+.buttons-wrapper .buttons-button:hover,
 .buttons-wrapper .buttons-button:focus,
+.buttons-wrapper .form-actions input:hover,
 .buttons-wrapper .form-actions input:focus,
+.buttons-wrapper .form-wrapper input[type='submit']:hover,
 .buttons-wrapper .form-wrapper input[type='submit']:focus {
   width: 100%;
   min-width: calc(116px - 50px - 15px);
@@ -143,32 +146,14 @@
     color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
 }
 
-@media (hover: hover) {
-  .buttons-wrapper .buttons-button:hover,
-  .buttons-wrapper .form-actions input:hover,
-  .buttons-wrapper .form-wrapper input[type='submit']:hover {
-    width: 100%;
-    min-width: calc(116px - 50px - 15px);
-    color: #000;
-    -webkit-box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.28);
-    box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.28);
-    padding: 0 50px 0 15px;
-    -webkit-transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
-    -o-transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
-    transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
-  }
-}
-
 .buttons-wrapper .buttons-button.settings-menu {
   background-color: #004adc;
   width: 57px;
   height: 57px;
+  min-width: 57px;
+  padding: 0;
+  color: transparent;
+  text-indent: -9999px;
   background-image: url(../images/icons/more.svg);
   background-size: 50%;
   background-position: center;
@@ -226,7 +211,7 @@
   padding: 0;
 }
 
-@media (hover: hover) {
+@media (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .buttons-wrapper .buttons-button.settings-menu:hover,
   .buttons-wrapper > li:hover .buttons-button.settings-menu {
     -webkit-transform: rotate(90deg);
@@ -234,20 +219,16 @@
     transform: rotate(90deg);
     background-image: url(../images/icons/close.svg);
     background-size: 50%;
-    text-indent: -9999px;
-    padding: 0;
   }
+}
 
-  /* Written twice to prevent breaking in Edge and IE */
-  .buttons-wrapper > li:focus-within .buttons-button.settings-menu {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    background-image: url(../images/icons/close.svg);
-    background-size: 50%;
-    text-indent: -9999px;
-    padding: 0;
-  }
+/* Written twice to prevent breaking in Edge and IE */
+.buttons-wrapper > li:focus-within .buttons-button.settings-menu {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background-image: url(../images/icons/close.svg);
+  background-size: 50%;
 }
 
 .buttons-wrapper .form-actions.active {
@@ -259,18 +240,8 @@
   display: flex;
 }
 
-@media (hover: hover) {
+@media (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .buttons-wrapper > li:hover .form-actions {
-    bottom: 77px; /* 57px (width) + 20px (padding t/b) */
-    opacity: 1;
-    visibility: visible;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  /* Written twice to prevent breaking in Edge and IE */
-  .buttons-wrapper > li:focus-within .form-actions {
     bottom: 77px; /* 57px (width) + 20px (padding t/b) */
     opacity: 1;
     visibility: visible;
@@ -280,8 +251,20 @@
   }
 }
 
+/* Written twice to prevent breaking in Edge and IE */
+.buttons-wrapper > li:focus-within .form-actions {
+  bottom: 77px; /* 57px (width) + 20px (padding t/b) */
+  opacity: 1;
+  visibility: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* Remove transition from Edge */
 @supports (-ms-ime-align: auto) {
+  .buttons-wrapper input.buttons-button,
+  .buttons-wrapper input[type="submit"].buttons-button,
   .buttons-wrapper .buttons-button,
   .buttons-wrapper .buttons-button:hover,
   .buttons-wrapper .buttons-button:focus,
@@ -297,6 +280,8 @@
 
 /* Remove transition from IE */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .buttons-wrapper input.buttons-button,
+  .buttons-wrapper input[type="submit"].buttons-button,
   .buttons-wrapper .buttons-button,
   .buttons-wrapper .buttons-button:hover,
   .buttons-wrapper .buttons-button:focus,
@@ -310,7 +295,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 975px) {
   .buttons-wrapper {
     right: 0;
     bottom: 0;
@@ -329,10 +314,14 @@
     .buttons-wrapper > li:hover .form-actions {
       bottom: 67px; /* 57px (width) + 10px (padding t/b) */
     }
+  }
 
-    .buttons-wrapper > li:focus-within .form-actions {
-      bottom: 67px; /* 57px (width) + 10px (padding t/b) */
-    }
+  _:-ms-fullscreen, :root .buttons-wrapper > li:hover .form-actions {
+    bottom: 67px; /* 57px (width) + 10px (padding t/b) */
+  }
+
+  .buttons-wrapper > li:focus-within .form-actions {
+    bottom: 67px; /* 57px (width) + 10px (padding t/b) */
   }
 }
 
