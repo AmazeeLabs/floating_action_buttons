@@ -123,11 +123,8 @@
   padding: 0;
 }
 
-.buttons-wrapper .buttons-button:hover,
 .buttons-wrapper .buttons-button:focus,
-.buttons-wrapper .form-actions input:hover,
 .buttons-wrapper .form-actions input:focus,
-.buttons-wrapper .form-wrapper input[type='submit']:hover,
 .buttons-wrapper .form-wrapper input[type='submit']:focus {
   width: 100%;
   min-width: calc(116px - 50px - 15px);
@@ -144,6 +141,28 @@
   transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
+}
+
+@media (hover: hover) {
+  .buttons-wrapper .buttons-button:hover,
+  .buttons-wrapper .form-actions input:hover,
+  .buttons-wrapper .form-wrapper input[type='submit']:hover {
+    width: 100%;
+    min-width: calc(116px - 50px - 15px);
+    color: #000;
+    -webkit-box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.28);
+    box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.28);
+    padding: 0 50px 0 15px;
+    -webkit-transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
+    -o-transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
+    transition: padding 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 10ms;
+  }
 }
 
 .buttons-wrapper .buttons-button.settings-menu {
@@ -197,9 +216,7 @@
 }
 
 .buttons-wrapper.active .buttons-button.settings-menu,
-.buttons-wrapper .buttons-button.settings-menu:hover,
-.buttons-wrapper .buttons-button.settings-menu:focus,
-.buttons-wrapper > li:hover .buttons-button.settings-menu {
+.buttons-wrapper .buttons-button.settings-menu:focus {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -209,19 +226,31 @@
   padding: 0;
 }
 
-/* Written twice to prevent breaking in Edge and IE */
-.buttons-wrapper > li:focus-within .buttons-button.settings-menu {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  background-image: url(../images/icons/close.svg);
-  background-size: 50%;
-  text-indent: -9999px;
-  padding: 0;
+@media (hover: hover) {
+  .buttons-wrapper .buttons-button.settings-menu:hover,
+  .buttons-wrapper > li:hover .buttons-button.settings-menu {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-image: url(../images/icons/close.svg);
+    background-size: 50%;
+    text-indent: -9999px;
+    padding: 0;
+  }
+
+  /* Written twice to prevent breaking in Edge and IE */
+  .buttons-wrapper > li:focus-within .buttons-button.settings-menu {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-image: url(../images/icons/close.svg);
+    background-size: 50%;
+    text-indent: -9999px;
+    padding: 0;
+  }
 }
 
-.buttons-wrapper .form-actions.active,
-.buttons-wrapper > li:hover .form-actions {
+.buttons-wrapper .form-actions.active {
   bottom: 77px; /* 57px (width) + 20px (padding t/b) */
   opacity: 1;
   visibility: visible;
@@ -230,14 +259,25 @@
   display: flex;
 }
 
-/* Written twice to prevent breaking in Edge and IE */
-.buttons-wrapper > li:focus-within .form-actions {
-  bottom: 77px; /* 57px (width) + 20px (padding t/b) */
-  opacity: 1;
-  visibility: visible;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media (hover: hover) {
+  .buttons-wrapper > li:hover .form-actions {
+    bottom: 77px; /* 57px (width) + 20px (padding t/b) */
+    opacity: 1;
+    visibility: visible;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  /* Written twice to prevent breaking in Edge and IE */
+  .buttons-wrapper > li:focus-within .form-actions {
+    bottom: 77px; /* 57px (width) + 20px (padding t/b) */
+    opacity: 1;
+    visibility: visible;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 /* Remove transition from Edge */
@@ -281,13 +321,18 @@
     padding: 50px 16px 0 16px; /* ((57px (width) - 45px (width) / 2) + 10px (padding l/r) */
   }
 
-  .buttons-wrapper .form-actions.active,
-  .buttons-wrapper > li:hover .form-actions {
+  .buttons-wrapper .form-actions.active {
     bottom: 67px; /* 57px (width) + 10px (padding t/b) */
   }
 
-  .buttons-wrapper > li:focus-within .form-actions {
-    bottom: 67px; /* 57px (width) + 10px (padding t/b) */
+  @media (hover: hover) {
+    .buttons-wrapper > li:hover .form-actions {
+      bottom: 67px; /* 57px (width) + 10px (padding t/b) */
+    }
+
+    .buttons-wrapper > li:focus-within .form-actions {
+      bottom: 67px; /* 57px (width) + 10px (padding t/b) */
+    }
   }
 }
 
