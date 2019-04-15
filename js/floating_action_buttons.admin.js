@@ -30,7 +30,7 @@
   function keydownCloseSettings(e) {
     var keyCode = e.keyCode || e.which;
     // Check if Esc key is pressed to close settings tray.
-    if (keyCode == 27) {
+    if (keyCode === 27) {
       closeSettings();
     }
   }
