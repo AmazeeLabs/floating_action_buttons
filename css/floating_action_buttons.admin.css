@@ -353,8 +353,6 @@
   -webkit-box-direction: normal;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse;
 }
 
 .layout-region-node-secondary.active {
@@ -688,26 +686,20 @@
 }
 
 /* Styles for new elements */
-.settings-wrapper {
+.layout-region-node-secondary .settings-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   padding: 0 20px;
   background-color: #222330;
   height: 50px;
+  position: relative;
 }
 
-.settings-wrapper .settings-title {
+.layout-region-node-secondary .settings-title {
   font-size: 14px;
   color: #fff;
   background-position: left;
@@ -717,7 +709,7 @@
   background-repeat: no-repeat;
 }
 
-.settings-wrapper .settings-close {
+.layout-region-node-secondary .settings-close {
   background-size: 25px;
   text-indent: -9999px;
   -webkit-transform: rotate(180deg);
@@ -725,11 +717,13 @@
   transform: rotate(180deg);
   background-image: url(../images/icons/close.svg);
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center center;
   background-color: transparent;
   border: none;
   width: 0;
-  padding: 10px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
 }
 
 .layout-region-node-secondary .form-type-radio .description,
