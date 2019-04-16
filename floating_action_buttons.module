@@ -1,6 +1,28 @@
 <?php
 
+/**
+ * @file
+ * Contains floating_action_buttons.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function floating_action_buttons_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the floating_action_buttons module.
+    case 'help.page.floating_action_buttons':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Replaces core action buttons (by default: save, view, delete) and the settings sidebar, from the node edition form, by floating buttons.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().

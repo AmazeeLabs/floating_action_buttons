@@ -1,5 +1,5 @@
 name: Floating Action Buttons
 type: module
-description: 'Adds floating buttons with options to save, delete, view, and open/close settings'
+description: 'Replaces core action buttons (by default: save, view, delete) and the settings sidebar, from the node edition form, by floating buttons.'
 package: Custom
 core: 8.x
