@@ -1,9 +1,9 @@
 (function($, Drupal) {
-  // Drupal core specific class names
+  // Drupal core specific class names.
   var formActionsClass = '.layout-region-node-footer__content .form-actions';
   var settingsClass = '.layout-region-node-secondary';
 
-  // Translations
+  // Translations.
   var closeText = Drupal.t('Close settings menu');
   var settingsText = Drupal.t('Settings');
   var formActionsText = Drupal.t('Form actions');
@@ -11,49 +11,67 @@
   var closeFormActionsText = Drupal.t('Close form actions');
 
   /**
+   * Closes the settings tray.
+   */
+  function closeSettings() {
+    $('.edit-settings').attr('aria-pressed', false);
+    $(settingsClass)
+      .add('body')
+      .removeClass('active');
+
+    // Remove keydownCloseSettings function from keydown.
+    $(document).off('keydown', keydownCloseSettings);
+  }
+
+  /**
+   * Keypress function to close the settings tray.
+   * @param {event} e
+   */
+  function keydownCloseSettings(e) {
+    var keyCode = e.keyCode || e.which;
+    // Check if Esc key is pressed to close settings tray.
+    if (keyCode === 27) {
+      closeSettings();
+    }
+  }
+
+  /**
    * Appends title and close button to the settings tray.
    */
   Drupal.behaviors.settings = {
     attach: function(context, settings) {
-      var $settings = $(settingsClass);
-      var $settingsWrapper = $('.settings-wrapper');
+      var $settings = $(settingsClass, context);
+      var $settingsWrapper = $('.settings-wrapper', context);
 
+      // Check if settings exist.
       if (!$settings.length || $settingsWrapper.length) {
         return;
       }
 
-      function closeSettings() {
-        $('.edit-settings').attr('aria-pressed', false);
-        $(settingsClass)
-          .add('body')
-          .removeClass('active');
-      }
-
+      // Creates close button to close settings tray.
       var $button = $('<button />')
         .addClass('settings-close')
         .attr({
           type: 'button',
           role: 'button',
+          title: closeText,
         })
         .text(closeText)
         .on('click', closeSettings);
 
+      // Creates title for settings tray.
       var $title = $('<h2 />')
         .addClass('settings-title')
         .text(settingsText);
 
+      // Creates wrapper for $button and $title.
       var $wrapper = $('<div />')
         .addClass('settings-wrapper')
         .append($title)
         .append($button);
-      $settings.append($wrapper);
 
-      $(document).on('keydown', function(e) {
-        var keyCode = e.keyCode || e.which;
-        if (keyCode == 27 && $(settingsClass).hasClass('active')) {
-          closeSettings();
-        }
-      });
+      // Add $wrapper and $button to settings tray.
+      $settings.prepend($wrapper).append($button.clone(true));
     },
   };
 
@@ -62,14 +80,15 @@
    */
   Drupal.behaviors.floatingButtons = {
     attach: function(context, settings) {
-      var $formAction = $(formActionsClass);
-      var $buttonsWrapper = $('.buttons-wrapper');
+      var $formAction = $(formActionsClass, context);
+      var $buttonsWrapper = $('.buttons-wrapper', context);
 
+      // Check if form actions exist.
       if (!$formAction.length || $buttonsWrapper.length) {
         return;
       }
 
-      var $settings = $(settingsClass);
+      // Creates settings button for settings tray.
       var $settingsButton = $('<button />')
         .addClass('buttons-button edit-settings')
         .attr({
@@ -88,8 +107,12 @@
             .end()
             .find('body')
             .addClass('active');
+
+          // Add keydownCloseSettings function from keydown.
+          $(document).on('keydown', keydownCloseSettings);
         });
 
+      // Creates main button to show/hide menu options.
       var $settingsMenuButton = $('<button />')
         .addClass('buttons-button settings-menu')
         .attr({
@@ -97,18 +120,20 @@
           role: 'menuitem',
           'aria-pressed': false,
           'aria-expanded': false,
+          title: openFormActionsText,
         })
         .text(openFormActionsText)
         .on('click', function() {
           var $this = $(this);
           var $formAction = $(formActionsClass);
-          var $elements = $(formActionsClass).add('.buttons-wrapper');
+          var $elements = $formAction.add('.buttons-wrapper');
           if ($formAction.hasClass('active')) {
             $elements.removeClass('active');
             $this
               .attr({
                 'aria-pressed': false,
                 'aria-expanded': false,
+                title: openFormActionsText,
               })
               .text(openFormActionsText)
               .blur();
@@ -118,11 +143,13 @@
               .attr({
                 'aria-pressed': true,
                 'aria-expanded': true,
+                title: closeFormActionsText,
               })
               .text(closeFormActionsText);
           }
         });
 
+      // Creates a wrapper for the options.
       var $buttonWrapper = $('<ul />')
         .addClass('buttons-wrapper')
         .attr({
@@ -131,7 +158,8 @@
         })
         .append($('<li />'));
 
-      $(formActionsClass)
+      // Add above options to the form actions.
+      $formAction
         .replaceWith(function() {
           var $ul = $('<ul />', { html: $(this).html() });
           $.each(this.attributes, function(i, attribute) {
@@ -142,7 +170,8 @@
         })
         .end()
         .find(formActionsClass)
-        .prepend($settings.length ? $settingsButton : null)
+        // Prepend $settingsButton only if settings exists.
+        .prepend($(settingsClass).length ? $settingsButton : null)
         .children()
         .attr('role', 'menuitem')
         .wrap(function() {
