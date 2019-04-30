@@ -1,0 +1,14 @@
+{
+  "name": "drupal/floating_action_buttons",
+  "type": "drupal-module",
+  "description": "Replaces core action buttons (by default: save, view, delete) and the settings sidebar, from the node edition form, by floating buttons.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/floating_action_buttons",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/floating_action_buttons",
+    "source": "http://cgit.drupalcode.org/floating_action_buttons"
+  },
+  "require": { }
+}
