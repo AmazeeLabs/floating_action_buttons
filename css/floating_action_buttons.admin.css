@@ -191,12 +191,15 @@
   background-image: url(../images/icons/preview.svg);
 }
 
-.buttons-wrapper .buttons-button#edit-delete {
+.buttons-wrapper .buttons-button#edit-delete,
+.buttons-wrapper .buttons-button#edit-delete-translation {
   background-image: url(../images/icons/delete-red.svg);
 }
 
 .buttons-wrapper .buttons-button#edit-delete:hover,
-.buttons-wrapper .buttons-button#edit-delete:focus {
+.buttons-wrapper .buttons-button#edit-delete:focus,
+.buttons-wrapper .buttons-button#edit-delete-translation:hover,
+.buttons-wrapper .buttons-button#edit-delete-translation:focus {
   color: #d72222;
 }
 
@@ -327,7 +330,7 @@
 
 /* Settings styles */
 /* Styles for current elements */
-.js .layout-region-node-secondary {
+.layout-region-node-secondary {
   opacity: 0;
   visibility: hidden;
   height: 0;
@@ -353,9 +356,11 @@
   -webkit-box-direction: normal;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
-.js .layout-region-node-secondary.active {
+.layout-region-node-secondary.active {
   opacity: 1;
   visibility: visible;
   z-index: 999;
@@ -367,14 +372,14 @@
     overflow: hidden;
   }
 
-  .js .layout-region-node-secondary.active {
+  .layout-region-node-secondary.active {
     min-width: 100%;
     max-width: 100%;
     height: 100%;
   }
 }
 
-.js .layout-region-node-secondary .entity-meta {
+.layout-region-node-secondary .entity-meta {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -384,42 +389,42 @@
   border-left: none;
 }
 
-.js .layout-region-node-secondary .entity-meta .seven-details:last-child {
+.layout-region-node-secondary .entity-meta .seven-details:last-child {
   border-radius: 0;
 }
 
-.js .layout-region-node-secondary .entity-meta__header,
-.js .layout-region-node-secondary .entity-meta .seven-details {
+.layout-region-node-secondary .entity-meta__header,
+.layout-region-node-secondary .entity-meta .seven-details {
   border-top: none;
 }
 
-.js .layout-region-node-secondary .entity-meta,
-.js .layout-region-node-secondary .entity-meta__header,
-.js .layout-region-node-secondary .entity-meta .seven-details {
+.layout-region-node-secondary .entity-meta,
+.layout-region-node-secondary .entity-meta__header,
+.layout-region-node-secondary .entity-meta .seven-details {
   background-color: #fff;
 }
 
-.js .layout-region-node-secondary .entity-meta__header,
-.js .layout-region-node-secondary .seven-details__wrapper {
+.layout-region-node-secondary .entity-meta__header,
+.layout-region-node-secondary .seven-details__wrapper {
   padding: 38px 48px;
 }
 
-.js .layout-region-node-secondary .entity-meta .seven-details[open] {
+.layout-region-node-secondary .entity-meta .seven-details[open] {
   background-color: #f8f8f9;
 }
 
-.js .layout-region-node-secondary .form-autocomplete,
-.js .layout-region-node-secondary .form-text,
-.js .layout-region-node-secondary .form-tel,
-.js .layout-region-node-secondary .form-email,
-.js .layout-region-node-secondary .form-url,
-.js .layout-region-node-secondary .form-search,
-.js .layout-region-node-secondary .form-number,
-.js .layout-region-node-secondary .form-color,
-.js .layout-region-node-secondary .form-file,
-.js .layout-region-node-secondary .form-date,
-.js .layout-region-node-secondary .form-time,
-.js .layout-region-node-secondary .form-textarea {
+.layout-region-node-secondary .form-autocomplete,
+.layout-region-node-secondary .form-text,
+.layout-region-node-secondary .form-tel,
+.layout-region-node-secondary .form-email,
+.layout-region-node-secondary .form-url,
+.layout-region-node-secondary .form-search,
+.layout-region-node-secondary .form-number,
+.layout-region-node-secondary .form-color,
+.layout-region-node-secondary .form-file,
+.layout-region-node-secondary .form-date,
+.layout-region-node-secondary .form-time,
+.layout-region-node-secondary .form-textarea {
   background-color: #fff;
   border-color: #b8b8b8;
   border-radius: 0;
@@ -429,66 +434,66 @@
   width: 100%;
 }
 
-.js .layout-region-node-secondary .form-textarea {
+.layout-region-node-secondary .form-textarea {
   height: auto;
 }
 
-.js .layout-region-node-secondary .form-autocomplete:focus,
-.js .layout-region-node-secondary .form-autocomplete:hover,
-.js .layout-region-node-secondary .form-autocomplete:active,
-.js .layout-region-node-secondary .form-text:focus,
-.js .layout-region-node-secondary .form-text:hover,
-.js .layout-region-node-secondary .form-text:active,
-.js .layout-region-node-secondary .form-tel:focus,
-.js .layout-region-node-secondary .form-tel:hover,
-.js .layout-region-node-secondary .form-tel:active,
-.js .layout-region-node-secondary .form-email:focus,
-.js .layout-region-node-secondary .form-email:hover,
-.js .layout-region-node-secondary .form-email:active,
-.js .layout-region-node-secondary .form-url:focus,
-.js .layout-region-node-secondary .form-url:hover,
-.js .layout-region-node-secondary .form-url:active,
-.js .layout-region-node-secondary .form-search:focus,
-.js .layout-region-node-secondary .form-search:hover,
-.js .layout-region-node-secondary .form-search:active,
-.js .layout-region-node-secondary .form-number:focus,
-.js .layout-region-node-secondary .form-number:hover,
-.js .layout-region-node-secondary .form-number:active,
-.js .layout-region-node-secondary .form-color:focus,
-.js .layout-region-node-secondary .form-color:hover,
-.js .layout-region-node-secondary .form-color:active,
-.js .layout-region-node-secondary .form-file:focus,
-.js .layout-region-node-secondary .form-file:hover,
-.js .layout-region-node-secondary .form-file:active,
-.js .layout-region-node-secondary .form-date:focus,
-.js .layout-region-node-secondary .form-date:hover,
-.js .layout-region-node-secondary .form-date:active,
-.js .layout-region-node-secondary .form-time:focus,
-.js .layout-region-node-secondary .form-time:hover,
-.js .layout-region-node-secondary .form-time:active,
-.js .layout-region-node-secondary .form-textarea:focus,
-.js .layout-region-node-secondary .form-textarea:hover,
-.js .layout-region-node-secondary .form-textarea:active {
+.layout-region-node-secondary .form-autocomplete:focus,
+.layout-region-node-secondary .form-autocomplete:hover,
+.layout-region-node-secondary .form-autocomplete:active,
+.layout-region-node-secondary .form-text:focus,
+.layout-region-node-secondary .form-text:hover,
+.layout-region-node-secondary .form-text:active,
+.layout-region-node-secondary .form-tel:focus,
+.layout-region-node-secondary .form-tel:hover,
+.layout-region-node-secondary .form-tel:active,
+.layout-region-node-secondary .form-email:focus,
+.layout-region-node-secondary .form-email:hover,
+.layout-region-node-secondary .form-email:active,
+.layout-region-node-secondary .form-url:focus,
+.layout-region-node-secondary .form-url:hover,
+.layout-region-node-secondary .form-url:active,
+.layout-region-node-secondary .form-search:focus,
+.layout-region-node-secondary .form-search:hover,
+.layout-region-node-secondary .form-search:active,
+.layout-region-node-secondary .form-number:focus,
+.layout-region-node-secondary .form-number:hover,
+.layout-region-node-secondary .form-number:active,
+.layout-region-node-secondary .form-color:focus,
+.layout-region-node-secondary .form-color:hover,
+.layout-region-node-secondary .form-color:active,
+.layout-region-node-secondary .form-file:focus,
+.layout-region-node-secondary .form-file:hover,
+.layout-region-node-secondary .form-file:active,
+.layout-region-node-secondary .form-date:focus,
+.layout-region-node-secondary .form-date:hover,
+.layout-region-node-secondary .form-date:active,
+.layout-region-node-secondary .form-time:focus,
+.layout-region-node-secondary .form-time:hover,
+.layout-region-node-secondary .form-time:active,
+.layout-region-node-secondary .form-textarea:focus,
+.layout-region-node-secondary .form-textarea:hover,
+.layout-region-node-secondary .form-textarea:active {
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.js .layout-region-node-secondary .form-text:focus,
-.js .layout-region-node-secondary .form-tel:focus,
-.js .layout-region-node-secondary .form-email:focus,
-.js .layout-region-node-secondary .form-url:focus,
-.js .layout-region-node-secondary .form-search:focus,
-.js .layout-region-node-secondary .form-number:focus,
-.js .layout-region-node-secondary .form-color:focus,
-.js .layout-region-node-secondary .form-file:focus,
-.js .layout-region-node-secondary .form-textarea:focus,
-.js .layout-region-node-secondary .form-date:focus,
-.js .layout-region-node-secondary .form-time:focus {
+.layout-region-node-secondary .form-text:focus,
+.layout-region-node-secondary .form-tel:focus,
+.layout-region-node-secondary .form-email:focus,
+.layout-region-node-secondary .form-url:focus,
+.layout-region-node-secondary .form-search:focus,
+.layout-region-node-secondary .form-number:focus,
+.layout-region-node-secondary .form-color:focus,
+.layout-region-node-secondary .form-file:focus,
+.layout-region-node-secondary .form-textarea:focus,
+.layout-region-node-secondary .form-date:focus,
+.layout-region-node-secondary .form-time:focus {
   border-color: #0049da;
 }
 
-.js .layout-region-node-secondary .button {
+.layout-region-node-secondary .button {
   min-width: 140px;
   height: 40px;
   padding: 0 16px;
@@ -504,9 +509,9 @@
   box-shadow: none;
 }
 
-.js .layout-region-node-secondary .button:active,
-.js .layout-region-node-secondary .button:hover,
-.js .layout-region-node-secondary .button:focus {
+.layout-region-node-secondary .button:active,
+.layout-region-node-secondary .button:hover,
+.layout-region-node-secondary .button:focus {
   background-color: #083a9e;
   background-image: none;
   color: #fff;
@@ -514,10 +519,10 @@
   box-shadow: none;
 }
 
-.js .layout-region-node-secondary .button:disabled,
-.js .layout-region-node-secondary .button:disabled:active,
-.js .layout-region-node-secondary .button.is-disabled,
-.js .layout-region-node-secondary .button.is-disabled:active {
+.layout-region-node-secondary .button:disabled,
+.layout-region-node-secondary .button:disabled:active,
+.layout-region-node-secondary .button.is-disabled,
+.layout-region-node-secondary .button.is-disabled:active {
   background: rgba(0, 73, 218, 0.3);
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -526,7 +531,7 @@
   text-shadow: none;
 }
 
-.js .layout-region-node-secondary details > summary {
+.layout-region-node-secondary details > summary {
   color: #222330;
 }
 
@@ -534,21 +539,21 @@
   display: none;
 }
 
-.js .layout-region-node-secondary details > summary {
+.layout-region-node-secondary details > summary {
   list-style: none;
 }
 
-.js .layout-region-node-secondary details > summary::-webkit-details-marker {
+.layout-region-node-secondary details > summary::-webkit-details-marker {
   display: none;
 }
 
-.js .layout-region-node-secondary .collapse-processed > summary::before,
-.js .layout-region-node-secondary :not([open]).collapse-processed > summary::before {
+.layout-region-node-secondary .collapse-processed > summary::before,
+.layout-region-node-secondary :not([open]).collapse-processed > summary::before {
   background: none;
   padding: 0.85em 0;
 }
 
-.js .layout-region-node-secondary details > summary::after {
+.layout-region-node-secondary details > summary::after {
   background-image: url(../images/icons/arrow-forward.svg);
   display: block;
   height: 15px;
@@ -559,40 +564,40 @@
   margin-right: 10px;
 }
 
-.js .layout-region-node-secondary details[open] > summary::after {
+.layout-region-node-secondary details[open] > summary::after {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-.js .layout-region-node-secondary .seven-details__summary:hover,
-.js .layout-region-node-secondary .seven-details__summary:focus,
-.js .layout-region-node-secondary .seven-details[open] > .seven-details__summary,
-.js .layout-region-node-secondary details > summary:hover,
-.js .layout-region-node-secondary details > summary:focus,
-.js .layout-region-node-secondary details[open] > summary,
-.js .layout-region-node-secondary a,
-.js .layout-region-node-secondary .link {
+.layout-region-node-secondary .seven-details__summary:hover,
+.layout-region-node-secondary .seven-details__summary:focus,
+.layout-region-node-secondary .seven-details[open] > .seven-details__summary,
+.layout-region-node-secondary details > summary:hover,
+.layout-region-node-secondary details > summary:focus,
+.layout-region-node-secondary details[open] > summary,
+.layout-region-node-secondary a,
+.layout-region-node-secondary .link {
   color: #004adc;
 }
 
-.js .layout-region-node-secondary details .details-title {
+.layout-region-node-secondary details .details-title {
   color: #222330;
 }
 
-.js .layout-region-node-secondary details .details-title:hover,
-.js .layout-region-node-secondary details .details-title:focus,
-.js .layout-region-node-secondary details .details-title:active,
-.js .layout-region-node-secondary details:hover .details-title,
-.js .layout-region-node-secondary details:focus .details-title,
-.js .layout-region-node-secondary details:active .details-title {
+.layout-region-node-secondary details .details-title:hover,
+.layout-region-node-secondary details .details-title:focus,
+.layout-region-node-secondary details .details-title:active,
+.layout-region-node-secondary details:hover .details-title,
+.layout-region-node-secondary details:focus .details-title,
+.layout-region-node-secondary details:active .details-title {
   color: #004adc;
   text-decoration: none;
 }
 
-.js .layout-region-node-secondary select,
-.js .layout-region-node-secondary select:hover,
-.js .layout-region-node-secondary select:focus {
+.layout-region-node-secondary select,
+.layout-region-node-secondary select:hover,
+.layout-region-node-secondary select:focus {
   height: 41px;
   width: 100%;
   padding-right: 40px;
@@ -605,12 +610,12 @@
   border-radius: 3px;
 }
 
-.js .layout-region-node-secondary select::-ms-expand {
+.layout-region-node-secondary select::-ms-expand {
   display: none;
 }
 
-.js .layout-region-node-secondary .chosen-container-single .chosen-single,
-.js .layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single {
+.layout-region-node-secondary .chosen-container-single .chosen-single,
+.layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single {
   height: 41px;
   width: 100%;
   padding-right: 40px;
@@ -625,17 +630,17 @@
   align-items: center;
 }
 
-.js .layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single {
+.layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.js .layout-region-node-secondary .chosen-container-single .chosen-single div {
+.layout-region-node-secondary .chosen-container-single .chosen-single div {
   width: 47px;
 }
 
-.js .layout-region-node-secondary .chosen-container-single .chosen-single div b,
-.js .layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single div b {
+.layout-region-node-secondary .chosen-container-single .chosen-single div b,
+.layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single div b {
   background-image: url(../images/icons/arrow-down.svg) !important;
   background-repeat: no-repeat !important;
   background-color: #fff;
@@ -643,13 +648,13 @@
   background-size: 15px !important;
 }
 
-.js .layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single div b {
+.layout-region-node-secondary .chosen-container-active.chosen-with-drop .chosen-single div b {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.js .layout-region-node-secondary .field--widget-datetime-timestamp .container-inline {
+.layout-region-node-secondary .field--widget-datetime-timestamp .container-inline {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -659,18 +664,18 @@
   flex-flow: row nowrap;
 }
 
-.js .layout-region-node-secondary .field--widget-datetime-timestamp .container-inline > div {
+.layout-region-node-secondary .field--widget-datetime-timestamp .container-inline > div {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 50%;
   flex: 1 1 50%;
   max-width: 50%;
 }
 
-.js .layout-region-node-secondary .field--widget-datetime-timestamp .container-inline > div:first-child {
+.layout-region-node-secondary .field--widget-datetime-timestamp .container-inline > div:first-child {
   margin-right: 20px;
 }
 
-.js .layout-region-node-secondary .field--widget-moderation-state-buttons > div {
+.layout-region-node-secondary .field--widget-moderation-state-buttons > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -681,25 +686,31 @@
   width: 100%;
 }
 
-.js .layout-region-node-secondary .field--widget-moderation-state-buttons > div .button {
+.layout-region-node-secondary .field--widget-moderation-state-buttons > div .button {
   margin: 0 0 20px 0;
 }
 
 /* Styles for new elements */
-.js .layout-region-node-secondary .settings-wrapper {
+.settings-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   padding: 0 20px;
   background-color: #222330;
   height: 50px;
-  position: relative;
 }
 
-.js .layout-region-node-secondary .settings-title {
+.settings-wrapper .settings-title {
   font-size: 14px;
   color: #fff;
   background-position: left;
@@ -709,7 +720,7 @@
   background-repeat: no-repeat;
 }
 
-.js .layout-region-node-secondary .settings-close {
+.settings-wrapper .settings-close {
   background-size: 25px;
   text-indent: -9999px;
   -webkit-transform: rotate(180deg);
@@ -717,34 +728,32 @@
   transform: rotate(180deg);
   background-image: url(../images/icons/close.svg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left center;
   background-color: transparent;
   border: none;
   width: 0;
-  position: absolute;
-  top: 12px;
-  right: 20px;
+  padding: 10px;
 }
 
-.js .layout-region-node-secondary .form-type-radio .description,
-.js .layout-region-node-secondary .form-type-checkbox .description {
+.layout-region-node-secondary .form-type-radio .description,
+.layout-region-node-secondary .form-type-checkbox .description {
   width: 100%;
   margin: 0;
 }
 
-.js .layout-region-node-secondary .form-type-radio input,
-.js .layout-region-node-secondary .form-type-checkbox input {
+.layout-region-node-secondary .form-type-radio input,
+.layout-region-node-secondary .form-type-checkbox input {
   opacity: 0;
   position: absolute;
 }
 
-.js .layout-region-node-secondary .form-type-radio label,
-.js .layout-region-node-secondary .form-type-checkbox label {
+.layout-region-node-secondary .form-type-radio label,
+.layout-region-node-secondary .form-type-checkbox label {
   position: relative;
 }
 
-.js .layout-region-node-secondary .form-type-radio label::before,
-.js .layout-region-node-secondary .form-type-checkbox label::before {
+.layout-region-node-secondary .form-type-radio label::before,
+.layout-region-node-secondary .form-type-checkbox label::before {
   content: '';
   display: inline-block;
   width: 14px;
@@ -756,8 +765,8 @@
   background-color: #fafafa;
 }
 
-.js .layout-region-node-secondary .form-type-radio input:checked + label::before,
-.js .layout-region-node-secondary .form-type-checkbox input:checked + label::before {
+.layout-region-node-secondary .form-type-radio input:checked + label::before,
+.layout-region-node-secondary .form-type-checkbox input:checked + label::before {
   background-image: url(../images/icons/check.svg);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -769,11 +778,11 @@
   transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.js .layout-region-node-secondary .form-type-radio label::before {
+.layout-region-node-secondary .form-type-radio label::before {
   border-radius: 50%;
 }
 
-.js .layout-region-node-secondary .form-type-radio input:checked + label::before {
+.layout-region-node-secondary .form-type-radio input:checked + label::before {
   background-image: -webkit-radial-gradient(
     circle,
     #004adc 4px,
@@ -784,7 +793,7 @@
   background-color: #fafafa;
 }
 
-.js .layout-region-node-secondary .form-type-radio input:checked + label::before {
+.layout-region-node-secondary .form-type-radio input:checked + label::before {
   background-image: -webkit-radial-gradient(
     circle,
     #004adc 4px,
@@ -795,21 +804,21 @@
   background-color: #fafafa;
 }
 
-.js .layout-region-node-secondary .form-type-radio.form-disabled input + label::before,
-.js .layout-region-node-secondary .form-type-radio input:disabled + label::before,
-.js .layout-region-node-secondary .form-type-checkbox.form-disabled input + label::before,
-.js .layout-region-node-secondary .form-type-checkbox input:disabled + label::before {
+.layout-region-node-secondary .form-type-radio.form-disabled input + label::before,
+.layout-region-node-secondary .form-type-radio input:disabled + label::before,
+.layout-region-node-secondary .form-type-checkbox.form-disabled input + label::before,
+.layout-region-node-secondary .form-type-checkbox input:disabled + label::before {
   border-color: rgba(112, 112, 112, 0.7);
 }
 
-.js .layout-region-node-secondary .form-type-checkbox.form-disabled input:checked + label::before,
-.js .layout-region-node-secondary .form-type-checkbox input:checked:disabled + label::before {
+.layout-region-node-secondary .form-type-checkbox.form-disabled input:checked + label::before,
+.layout-region-node-secondary .form-type-checkbox input:checked:disabled + label::before {
   background-color: rgba(112, 112, 112, 0.7);
   border-color: transparent;
 }
 
-.js .layout-region-node-secondary .form-type-radio.form-disabled input:checked + label::before,
-.js .layout-region-node-secondary .form-type-radio input:checked:disabled + label::before {
+.layout-region-node-secondary .form-type-radio.form-disabled input:checked + label::before,
+.layout-region-node-secondary .form-type-radio input:checked:disabled + label::before {
   background-image: -webkit-radial-gradient(
     circle,
     rgba(112, 112, 112, 0.7) 4px,
@@ -828,8 +837,8 @@
   background-color: #fafafa;
 }
 
-.js .layout-region-node-secondary .form-type-radio input + label::after,
-.js .layout-region-node-secondary .form-type-checkbox input + label::after {
+.layout-region-node-secondary .form-type-radio input + label::after,
+.layout-region-node-secondary .form-type-checkbox input + label::after {
   content: '';
   border-radius: 50%;
   position: absolute;
@@ -843,20 +852,20 @@
   opacity: 0;
 }
 
-.js .layout-region-node-secondary .form-type-radio.form-disabled input + label::after,
-.js .layout-region-node-secondary .form-type-checkbox.form-disabled input + label::after {
+.layout-region-node-secondary .form-type-radio.form-disabled input + label::after,
+.layout-region-node-secondary .form-type-checkbox.form-disabled input + label::after {
   content: none;
 }
 
-.js .layout-region-node-secondary .form-type-radio input:not(:checked):focus + label::after,
-.js .layout-region-node-secondary .form-type-checkbox input:not(:checked):focus + label::after {
+.layout-region-node-secondary .form-type-radio input:not(:checked):focus + label::after,
+.layout-region-node-secondary .form-type-checkbox input:not(:checked):focus + label::after {
   background-color: rgba(112, 112, 112, 0.25);
   -webkit-animation: ripple 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   animation: ripple 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.js .layout-region-node-secondary .form-type-radio input:checked:focus + label::after,
-.js .layout-region-node-secondary .form-type-checkbox input:checked:focus + label::after {
+.layout-region-node-secondary .form-type-radio input:checked:focus + label::after,
+.layout-region-node-secondary .form-type-checkbox input:checked:focus + label::after {
   background-color: rgba(0, 74, 220, 0.15);
   -webkit-animation: ripple 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   animation: ripple 0.5s cubic-bezier(0.4, 0, 0.2, 1);
