@@ -3,3 +3,5 @@ type: module
 description: 'Replaces core action buttons (by default: save, view, delete) and the settings sidebar, from the node edition form, by floating buttons.'
 package: Custom
 core: 8.x
+dependencies:
+  - drupal:node
