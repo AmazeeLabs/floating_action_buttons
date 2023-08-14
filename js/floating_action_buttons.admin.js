@@ -1,7 +1,7 @@
 (function($, Drupal) {
   // Drupal core specific class names.
-  var formActionsClass = '.layout-region-node-footer__content .form-actions';
-  var settingsClass = '.layout-region-node-secondary';
+  var formActionsClass = '.layout-region--node-footer .form-actions';
+  var settingsClass = '.layout-region--node-secondary';
 
   // Translations.
   var closeText = Drupal.t('Close settings menu');
