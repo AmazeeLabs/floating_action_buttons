@@ -898,3 +898,8 @@
     transform: scale(3);
   }
 }
+
+/* Hack for autocomplete function. */
+.ui-autocomplete {
+  z-index: 9999;
+}
